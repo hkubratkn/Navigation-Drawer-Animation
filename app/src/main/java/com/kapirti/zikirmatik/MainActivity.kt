@@ -102,8 +102,22 @@ fun NavigationDrawer(){
         ){}
         NavigationItem(
             resId = R.drawable.ic_launcher_foreground,
-            text = "Textttt"
-        ){}
+            text = "Textttt",
+            itemClicked = {
+                val intent = Intent()
+                intent.action=Intent.ACTION_SEND
+                intent.putExtra(Intent.EXTRA_TEXT,"lalalaa")
+                intent.type="text/plain"
+                context.startActivity(Intent.createChooser(intent, "gegegegeg"))
+            }
+        )
+        NavigationItem(
+            resId = R.drawable.ic_launcher_background,
+            text = "heheekekskd",
+            itemClicked = {
+                Toast.makeText(context, "oldu mu", Toast.LENGTH_LONG).show()
+            }
+        )
 
         Row(
             modifier = Modifier
